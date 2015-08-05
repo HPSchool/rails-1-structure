@@ -1,0 +1,161 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Let's ride that rails
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section
+        h1 Let's ride some rails
+        img(src="/images/logo.png", alt="" width="150")
+
+      section
+        h2.bullet In this first lesson
+        ul
+          li Installation
+          li Getting started with ruby
+          li Getting started with <del>Atom, Vim, Emacs and </del> Sublime
+          li Creating our first app
+
+      section
+        h2 Installation
+        p with rbenv
+        img(src="/images/rbenvlogo.jpg", alt="", width="150")
+
+      section
+        h2 installation
+        h3 let's roll
+        p 1. Installing Homebrew (on Mac)
+        pre
+          code.language-bash.
+            > ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+            > brew doctor
+            > brew update
+
+      section
+        h2 installation
+        p 1. Installing dependencies (on Ubuntu)
+        pre
+          code.language-bash.
+            > sudo apt-get install build-essential git-core python-software-properties openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev libgdbm-dev ncurses-dev automake libtool bison subversion pkg-config libffi-dev libcurl4-openssl-dev libpq-dev imagemagick ufw postgresql postgresql-contrib libpq-dev nodejs libxslt1-dev
+
+      section
+        h2 installation
+        p 2. Installing rbenv and ruby build (on Mac)
+        pre
+          code.language-bash.
+            > brew install rbenv ruby build
+
+            > echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+            # If you use zsh (can also be replaced with .zsh_profile)
+
+      section
+        h2 installation
+        p 2. Installing rbenv and ruby build (on Linux)
+        pre
+          code.language-bash.
+            > git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+            > git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+            > echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+            > echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+
+            # If you use zsh replace .bashrc with .zshrc
+            # If you use your linux as server replace with .bash_profile
+        p close your terminal after this and reopen it or issue <code>exec $SHELL -l</code>
+
+      section
+        h2 installation
+        p 3. Listing and installing ruby (Linux and Mac)
+        pre
+          code.language-bash.
+            > rbenv install --list
+            # A list apears here
+            > rbenv install 2.2.2
+            > rbenv global 2.2.2
+            > rbenv rehash
+
+            > ruby -v
+            # should output 2.2.2-xxxxxxxx
+
+            > gem install bundler
+            > gem install rails
+
+      section
+        h2 Getting started with Ruby
+        img(src="/images/rubylogo.png", alt="", width="150")
+
+      section
+        h2 Getting started with Ruby
+        p Let's dive in to a console
+        pre
+          code.language-bash
+            > irb
+
+      section
+        h2 Getting started with Ruby
+        p Hello world!
+        pre
+          code.language-ruby.
+            'Hello world!'
+
+      section
+        h2 Getting started with Ruby
+        p saving stuff
+        pre
+          code.language-ruby.
+            > hello = 'world!'
+            # local var
+
+            > $hello = 'world!'
+            # global var
+
+      section
+        h2 Getting started with Ruby
+        p possabilities
+        pre
+          code.language-ruby.
+            > 'String'.class
+            > [1, 2, 3].class
+            > 1.class
+            > 1.32.class
+            > {number: 1, information: 'some_info'}.class
+
+
+      section
+        h2 Getting started with Ruby
+        p Methods
+        pre
+          code.language-ruby.
+            def something
+              puts 'we are running'
+              return 'somefar'
+            end
+            something
+
+            def something_else(with_info)
+              puts 'we are running again'
+              return with_info-15
+            end
+            something_else(50)
+
+      section
+        h2 Getting started with Sublime
+        p
+        img(src="/images/sublime.png", alt="", width="150")
+
+      section
+        h2 Creating a Rails app
+        p Let's rock
+        pre
+          code.language-bash.
+            rails new appname
+
+    script(src='build/build.js')
